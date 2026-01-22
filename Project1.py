@@ -10,6 +10,8 @@ years = []
 
 for line in hand:
     line = line.decode().strip()
+    if re.search('academictree.org', line):
+        break
     years_result19 = re.findall('19[0-9]{2}', line)
     years_result20 = re.findall('20[0-2]{0-6}', line)
     if years_result19 != []:
