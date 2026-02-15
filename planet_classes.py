@@ -43,5 +43,11 @@ for index, row in df.iterrows(): #get all the planets first
         planet_name =row['orbits']
         if planet_name in planet_d:
             host_planet =planet_d[planet_name]
-            m = moon(name = index, radius =row['meandRadius']
+            m = moon(name = index, radius =row['meanRadius'], planet_companion = host_planet)
+            m.update_planet()
+            moon_d[index] = m
+
+print("Final Checks")
+for key, val in planet_d.items():
+    print_largest(val)
 
